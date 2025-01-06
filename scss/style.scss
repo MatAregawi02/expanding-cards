@@ -1,0 +1,74 @@
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*{
+    padding : 0;
+    margin : 0;
+    box-sizing: inherit;
+}
+body{
+    width : 100vw;
+    height : 100vh;
+    font-size: 1.6rem;
+    overflow : hidden;
+}
+.container{
+    display : flex;
+    width : 100%;
+    height : 100%;
+    
+
+   
+    .panel{
+        position : relative;
+        flex : .5;
+        cursor: pointer;
+        transition : flex .5s ease-in;
+    }
+    .description {
+        color : red;
+        position : absolute;
+        bottom : 30px;
+        left : 30px;
+        font-size : 30px;
+        opacity : 0;
+    }
+    
+    .panel.active{
+        flex : 2;
+        // .description{
+        //     opacity : 0.75;
+        // }
+    }
+    .description.show{
+        opacity: 1;
+    }
+    @mixin all_panels{
+        border-radius : 30px;
+        background-position : center;
+        background-size : cover;
+        background-repeat : no-repeat;
+        margin : 20px;
+    }
+    .panel-one{
+        background-image: url('/img/img1.jpg');
+        @include all_panels;
+    }
+    .panel-two{
+        background-image: url('/img/img2.jpg');
+        @include all_panels;
+    }
+    .panel-three{
+        background-image: url('/img/img3.jpg');
+        @include all_panels;
+    }
+    .panel-four{
+        background-image: url('/img/img4.jpg');
+        @include all_panels;
+    }
+    .panel-five{
+        background-image: url('/img/img5.jpg');
+        @include all_panels;
+    }
+}
